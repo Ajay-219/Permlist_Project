@@ -90,6 +90,4 @@ app.post("/create-list", async (req, res) => {
   res.redirect("/list/" + result.rows[0].id);
 });
 
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
+export default app;
