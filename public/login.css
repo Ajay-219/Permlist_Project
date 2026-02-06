@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+      rgba(15, 23, 42, 0.6),
+      rgba(15, 23, 42, 0.6)
+    ),
+    url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1950&q=80");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Glass Card */
+.login-box {
+  width: 380px;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.08);
+  -webkit-backdrop-filter: blur(15px);
+   backdrop-filter: blur(15px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+
+.login-box h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+/* Input Styling */
+.input-group {
+  position: relative;
+  margin-bottom: 35px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #fff;
+  color: white;
+  outline: none;
+  font-size: 14px;
+}
+
+.input-group label {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  color: #ddd;
+  font-size: 14px;
+  transition: 0.3s;
+  pointer-events: none;
+}
+
+/* Floating label */
+.input-group input:focus ~ label,
+.input-group input:valid ~ label {
+  top: -15px;
+  font-size: 12px;
+  color: #38bdf8;
+}
+
+/* Options */
+.options {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 30px;
+}
+
+.options a {
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+.options a:hover {
+  text-decoration: underline;
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 12px;
+  background: #38bdf8;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #0ea5e9;
+}
+
+/* Register */
+.register {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.register a {
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+.register a:hover {
+  text-decoration: underline;
+}

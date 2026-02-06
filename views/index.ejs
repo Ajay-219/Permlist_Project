@@ -1,0 +1,58 @@
+<%- include('partials/header'); -%>
+
+<div class="dashboard">
+  <aside class="sidebar">
+    <div class="logo">Permalist</div>
+    <nav>
+      <% lists.forEach(function(list){ %>
+        <a href="/list/<%= list.id %>"
+           class="<%= list.id == currentListId ? 'active' : '' %>">
+           <%= list.name %>
+        </a>
+      <% }) %>
+    </nav>
+    <form action="/create-list" method="post" class="new-list">
+      <input type="text" name="listName" placeholder="New List" required>
+      <button type="submit">+</button>
+    </form>
+  </aside>
+
+  <main class="main">
+    <div class="stats">
+      <div class="card">
+        <h3><%= listItems.length %></h3>
+        <p>Total Tasks</p>
+      </div>
+      <div class="card">
+        <h3><%= listTitle %></h3>
+        <p>Current List</p>
+      </div>
+      <div class="card">
+        <h3><%= lists.length %></h3>
+        <p>Total Lists</p>
+      </div>
+    </div>
+
+    <div class="task-section">
+      <h2><%= listTitle %></h2>
+
+      <% for(let item of listItems){ %>
+        <div class="task-card">
+          <form action="/delete" method="post">
+            <input type="hidden" name="listId" value="<%= currentListId %>">
+            <input type="checkbox" onchange="this.form.submit()" name="deleteItemId" value="<%= item.id %>">
+          </form>
+          <p><%= item.title %></p>
+        </div>
+      <% } %>
+
+      <form action="/add" method="post" class="add-task">
+        <input type="hidden" name="listId" value="<%= currentListId %>">
+        <input type="text" name="newItem" placeholder="Add new task..." required>
+        <button type="submit">Add</button>
+      </form>
+    </div>
+  </main>
+</div>
+
+<%- include('partials/footer'); -%>
